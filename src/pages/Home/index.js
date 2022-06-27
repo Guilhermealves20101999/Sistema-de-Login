@@ -9,6 +9,7 @@ const Home = () => {
       <div class="Menu">
       <Navigation/>
       </div>
+    
     </div>
   );
 };
