@@ -31,7 +31,7 @@ const Navbar = () => {
     <>
       <Nav>
         <NavLink to='/home'>
-          <img style={{marginLeft: '-100px',}} src="#" alt='logo' />
+          <img style={{marginLeft: '-100px',}} src="https://consultmidia.it/wp-content/uploads/2020/03/logo-oficial-4_7b80b499131f90466212f091336eca30.png" alt='logo' />
         </NavLink>
         <Bars />
         <NavMenu>
