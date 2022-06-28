@@ -1,13 +1,13 @@
 # Getting Started with Create React App
-
-Todo o projeto feito em react, com o armazenamento dos dados em LocalStorage
-Implementada a autenticação nativa,
-Configurado o Idioma Português Brasil
-Ultilizado o tema Blade
-telas de login
-registrar usuário
-perfil dousuário
-menu.
+</br>
+Todo o projeto feito em react, com o armazenamento dos dados em LocalStorage</br>
+Implementada a autenticação nativa</br>
+Configurado o Idioma Português Brasil</br>
+Ultilizado o tema Blade</br>
+telas de login</br>
+registrar usuário</br>
+perfil dousuário</br>
+menu.</br>
 
 
 
