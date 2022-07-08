@@ -1,9 +1,22 @@
-import React, { useState } from "react";
-import Input from "../../components/Input";
-import Button from "../../components/Button";
-import * as C from "./styles";
-import { Link, useNavigate } from "react-router-dom";
+import * as React from 'react';
+import { useState } from "react";
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+
+
+const theme = createTheme();
 
 const Signup = () => {
 
@@ -11,8 +24,8 @@ const Signup = () => {
   const [emailConf, setEmailConf] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCpf] = useState("");
-  const [date, setDate] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -39,57 +52,108 @@ const Signup = () => {
   };
 
   return (
-    <C.Container>
-      <C.Label>SISTEMA DE LOGIN</C.Label>
-      <C.Content>
-      <Input
-          type="email"
-          placeholder="Digite seu E-mail"
-          value={email}
-          onChange={(e) => [setEmail(e.target.value), setError("")]}
-        />
-         <Input
-          type="email"
-          placeholder="Digite seu E-mail"
-          value={emailConf}
-          onChange={(e) => [setEmailConf(e.target.value), setError("")]}
-        />
-        <Input
-          type="password"
-          placeholder="Digite sua Senha"
-          value={password}
-          onChange={(e) => [setPassword(e.target.value), setError("")]}
-        />
-      <Input
-          type="varcha"
-          placeholder="Nome completo"
-          value={name}
-          onChange={(e) => [setName(e.target.value), setError("")]}
-        />
-        <Input
-          type="varcha"
-          placeholder="000.000.000-00"
-          value={cpf}
-          onChange={(e) => [setCpf(e.target.value), setError("")]}
-        />
-        <Input
-          type="date"
-          placeholder="Data de Nascimento"
-          value={date}
-          onChange={(e) => [setDate(e.target.value), setError("")]}
-        />
-        <C.labelError>{error}</C.labelError>
-        <Button Text="Inscrever-se" onClick={handleSignup}  />
-        
-        <C.LabelSignin>
-          Já tem uma conta?
-          <C.Strong>
-            <Link to="/">&nbsp;Entre</Link>
-          </C.Strong>
-        </C.LabelSignin>
-      </C.Content>
-    </C.Container>
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Cadastra-se
+          </Typography>
+          <Box component="form" noValidate onSubmit={handleSignup} sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                 fullWidth
+                  type="varcha"
+                  placeholder="Nome"
+                  value={name}
+                  onChange={(e) => [setName(e.target.value), setError("")]}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  type="varcha"
+                  placeholder="Sobrenome"
+                  value={sobrenome}
+                  onChange={(e) => [setSobrenome(e.target.value), setError("")]}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                 fullWidth
+                  type="varcha"
+                  placeholder="000.000.000-00"
+                  value={cpf}
+                  onChange={(e) => [setCpf(e.target.value), setError("")]}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                   type="email"
+                   placeholder="Digite seu E-mail"
+                   value={email}
+                   onChange={(e) => [setEmail(e.target.value), setError("")]}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                    fullWidth
+                    type="email"
+                    placeholder="Digite seu E-mail"
+                    value={emailConf}
+                    onChange={(e) => [setEmailConf(e.target.value), setError("")]}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                 fullWidth
+                  type="password"
+                  placeholder="Digite sua Senha"
+                  value={password}
+                  onChange={(e) => [setPassword(e.target.value), setError("")]}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={<Checkbox value="allowExtraEmails" color="primary" />}
+                  label="Quero receber inspiração, promoções de marketing e atualizações via e-mail."
+                />
+              </Grid>
+            </Grid>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Cadastrar
+            </Button>
+            <labelError>{error}</labelError>
+            <Grid container justifyContent="flex-end">
+              <Grid item>
+                <Link href="/Singin" variant="body2">
+                  Já tem conta? Entre
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+       
+      </Container>
+    </ThemeProvider>
   );
-};
+}
 
 export default Signup;
