@@ -56,6 +56,7 @@ const Signin = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
@@ -116,7 +117,7 @@ const Signin = () => {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
-              <labelError>{error}</labelError>
+              
               <Button
                 type="submit"
                 fullWidth
@@ -125,6 +126,7 @@ const Signin = () => {
               >
                 Sign In
               </Button>
+              <labelError>{error}</labelError>
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">

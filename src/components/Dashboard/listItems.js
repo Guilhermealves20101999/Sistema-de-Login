@@ -5,11 +5,15 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
-import StorageIcon from '@material-ui/icons/Storage'
+import StorageIcon from '@material-ui/icons/Storage';
+import SettingsIcon from '@material-ui/icons/Settings';
+import StarIcon from '@material-ui/icons/Star';
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
+
 
 export const mainListItems = (
   <div>
@@ -19,29 +23,35 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItem>
-    <ListItem button>
+    <ListItem button to="/src/pages/Crm">
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <StarIcon />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="CRM" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <PeopleIcon />
+        <ShoppingCartIcon />  
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Vendas" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <BarChartIcon />
+        <AccountBalanceWalletIcon />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="Financeiro" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <LayersIcon />
+        <AssignmentIndIcon />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="Contatos" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Contratos" />
     </ListItem>
   </div>
 );
@@ -51,13 +61,13 @@ export const secondaryListItems = (
     <ListSubheader inset>Configurações</ListSubheader>
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        <SettingsIcon />
       </ListItemIcon>
       <ListItemText primary="Configurações" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        <AssignmentIndIcon />
       </ListItemIcon>
       <ListItemText primary="Perfil" />
     </ListItem>
@@ -66,6 +76,12 @@ export const secondaryListItems = (
         <StorageIcon />
       </ListItemIcon>
       <ListItemText primary="Servidores" />
+    </ListItem> 
+    <ListItem button>
+      <ListItemIcon>
+        <LayersIcon />
+      </ListItemIcon>
+      <ListItemText primary="Integrações" />
     </ListItem>
   </div>
 );
